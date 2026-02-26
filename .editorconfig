@@ -1,0 +1,36 @@
+root = true
+
+[*.{kt,kts}]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+max_line_length = 120
+
+# Keep these ON (habit-building / avoids sloppy diffs)
+ktlint_standard_no-wildcard-imports = enabled
+ktlint_standard_function-naming = enabled
+ktlint_standard_property-naming = enabled
+ktlint_standard_filename = enabled
+
+# Relax the "style bikeshed" rules (common sources of friction)
+ktlint_standard_trailing-comma-on-call-site = disabled
+ktlint_standard_trailing-comma-on-declaration-site = disabled
+ktlint_standard_parameter-list-wrapping = disabled
+ktlint_standard_argument-list-wrapping = disabled
+ktlint_standard_wrapping = disabled
+ktlint_standard_multiline-expression-wrapping = disabled
+ktlint_standard_function-signature = disabled
+ktlint_standard_class-signature = disabled
+ktlint_standard_if-else-wrapping = disabled
+ktlint_standard_statement-wrapping = disabled
+ktlint_standard_chain-method-continuation = disabled
+ktlint_standard_string-template-indent = disabled
+
+# Tests: allow descriptive backticked names and longer lines
+[**/test/**/*.kt]
+ktlint_ignore_back_ticked_identifier = true
+max_line_length = unset
+
+[**/androidTest/**/*.kt]
+ktlint_ignore_back_ticked_identifier = true
+max_line_length = unset
