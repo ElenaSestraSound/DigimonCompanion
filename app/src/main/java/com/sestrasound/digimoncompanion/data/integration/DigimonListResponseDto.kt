@@ -1,5 +1,6 @@
 package com.sestrasound.digimoncompanion.data.integration
 
+import com.sestrasound.digimoncompanion.domain.Digimon
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -14,7 +15,13 @@ data class DigimonSummaryDto(
     val name: String,
     val href: String,
     val image: String,
-)
+) {
+    fun toDomain() = Digimon(
+        id = id.toString(),
+        name = name,
+        image = image,
+    )
+}
 
 @Serializable
 data class PageableDto(
